@@ -109,15 +109,21 @@ const serverless = require("serverless-http"); // ✅ added
 const app = express();
 
 // Middleware
-app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://brep.co.in",
-    "https://www.brep.co.in",
-    "https://brep-nu.vercel.app"
-  ],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: "*", // Replace with your frontend URL
+    credentials: true,
+  })
+);
+// app.use(cors({
+//   origin: [
+//     "http://localhost:5173",
+//     "https://brep.co.in",
+//     "https://www.brep.co.in",
+//     "https://brep-nu.vercel.app"
+//   ],
+//   credentials: true
+// }));
 
 app.use((req, res, next) => {
   console.log(`📢 Request received: ${req.method} ${req.url}`);
