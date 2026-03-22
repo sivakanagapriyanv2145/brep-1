@@ -111,7 +111,7 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: "*", // Replace with your frontend URL
+    origin: "http://localhost:5173/", // Replace with your frontend URL
     credentials: true,
   })
 );
